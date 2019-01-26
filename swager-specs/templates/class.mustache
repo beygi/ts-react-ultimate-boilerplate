@@ -1,0 +1,78 @@
+{{#imports}}
+/// <reference path="{{&.}}" />
+{{/imports}}
+
+import axios from "axios";
+import { AxiosInstance, AxiosPromise } from "axios";
+
+export interface RequestHeaders  {
+    header: string[];
+}
+
+{{#definitions}}
+export type {{&name}} = {{#tsType}}{{> type}};{{/tsType}};
+{{/definitions}}
+
+
+/**
+ * {{&description}}
+ * @class {{&className}}
+ * @param {(string)} [domainOrOptions] - The project domain.
+ */
+export class {{&className}} {
+
+    public static getInstance() {
+        if (!this.instance) {
+            this.instance = new {{&className}}();
+        }
+        return this.instance;
+    }
+    private baseURL: string = "{{&domain}}";
+    private static instance: {{&className}};
+    private AuthToken: string | null;
+    private axios: AxiosInstance;
+    private headers: { Authorization?: string };
+
+    private constructor() {
+        // empty;
+        this.CreateAxiosInstance();
+    }
+
+    public CreateAxiosInstance() {
+        this.axios = axios.create({
+            baseURL: this.baseURL,
+            timeout: 100000,
+            headers: this.getHeaders(),
+        });
+    }
+
+    public setBaseURL(url: string) {
+        this.baseURL = url;
+        this.CreateAxiosInstance();
+    }
+
+    public setAuthToken(token: string) {
+        this.AuthToken = token;
+        this.CreateAxiosInstance();
+    }
+
+    public destroy() {
+        this.AuthToken = null;
+    }
+
+    public getHeaders(): any {
+        this.headers = {};
+        // this.headers["Accept-Language"] = "fa_IR";
+        if (this.AuthToken) {
+            this.headers.Authorization = "Bearer " + this.AuthToken;
+        }
+        return this.headers;
+    }
+
+{{#methods}}
+    {{> method}}
+
+{{/methods}}
+}
+
+export default {{&className}};

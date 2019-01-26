@@ -1,0 +1,30 @@
+public {{&methodName}}(  params :
+{
+{{#parameters}}{{^isSingleton}}{{&camelCaseName}}{{&cardinality}}: {{> type}},
+{{/isSingleton}}{{/parameters}}  
+}  
+): AxiosPromise<{{&successfulResponseType}}> {
+    let body = null;
+    let path = "{{&path}}";
+    const query:{} = {};
+    {{#parameters}}        
+        {{#isBodyParameter}}
+                body = params['{{&camelCaseName}}'];
+        {{/isBodyParameter}}
+        {{#isPathParameter}}
+            path = path.replace('{{=<% %>=}}{<%&name%>}<%={{ }}=%>', `${params['{{&camelCaseName}}']}`);
+            delete params['{{&camelCaseName}}'];
+        {{/isPathParameter}}            
+        {{#isQueryParameter}}
+            query[`{{&camelCaseName}}`] = params['{{&camelCaseName}}']
+        {{/isQueryParameter}}      
+    {{/parameters}}
+    return this.axios({
+      method:'{{method}}',
+      url:path,
+      params : query,
+      data: (body)?body:params,
+    } );
+
+}
+
