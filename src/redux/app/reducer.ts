@@ -4,9 +4,7 @@ import * as Actions from "./constants";
 import { IAppStoreState } from "./store";
 
 const initialState: IAppStoreState = {
-    market: null,
     user: null,
-    office: null,
 };
 
 export default handleActions<IAppStoreState, any>({
