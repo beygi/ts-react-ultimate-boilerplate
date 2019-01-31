@@ -1,0 +1,106 @@
+@import (reference)  "../../theme/application";
+&[dir='rtl'] {
+    .block{
+        span.right {
+                float: left;
+        }
+        .block-title
+        {
+            .left
+            {
+                padding-right: auto;
+                padding-left: 10px;
+            }
+            .right
+            {
+                padding-left: auto;
+                padding-right: 10px;
+            }        
+        }
+    }
+    .block-collapse
+    {
+            .ant-collapse-header
+            {
+                padding-left: 15px !important; 
+                padding-right: 40px !important;
+            }  
+    }
+}
+
+/////////
+
+
+.block{
+    background-color: @secondaryDarkColor;
+    padding: 15px;
+    color : @secondaryTextColor;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px -2px #000;
+    transition-property: background-color box-shadow;
+    transition-duration: 1s;
+    h1,h2,h3,h4
+    {
+        color : @secondaryTextColor;
+    }
+    img{
+        max-width: 100%;
+    }
+    span.right {
+            float: right;
+    }
+    .block-title
+    {
+        font-size: 20px;
+        .left
+        {
+            padding-right: 10px;
+        }
+        .right
+        {
+            padding-left: 10px;
+        }        
+        .center-title
+        {
+            display: inline-block;
+            text-align: center;
+            width: 90%;
+        }
+        margin-bottom: 10px;
+    }
+    .no-title-margin
+    {
+        margin-bottom: 0px;
+    }
+    .block-title-collapse
+    {
+        font-size: 17px;
+    }
+}
+.no-padding
+{
+    padding: 0 !important;        
+}
+.transparent
+{
+    background-color: transparent;
+    box-shadow: none;
+}
+.block-collapse
+{
+        background-color: transparent !important;
+        .ant-collapse-header
+        {
+            color : @secondaryTextColor !important;
+            padding-right: 15px !important; 
+        }
+        .ant-collapse-content
+        {
+            color : @secondaryTextColor !important;
+        }
+        .ant-collapse-item
+        {
+            border: none !important;
+        }        
+}
