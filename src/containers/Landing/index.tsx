@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Redirect } from "react-router";
+import t from "../../services/trans/i18n";
 import USER from "./../../lib/user";
 import "./style.less";
 const user = USER.getInstance();
@@ -22,7 +23,7 @@ class LandingContainer extends React.Component<IProps, IState> {
             );
         }
         return (
-            <div>Example</div>
+            <div>{t.t("Example")}</div>
         );
     }
 }
