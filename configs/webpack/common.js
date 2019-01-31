@@ -129,7 +129,7 @@ module.exports = {
         new webpack.DefinePlugin({
             DEPLOY_TYPE: JSON.stringify(process.env.DEPLOY_TYPE || "production"),
             VERSION: JSON.stringify(gitRevisionPlugin.version()),
-            // COMMITHASH: JSON.stringify(gitRevisionPlugin.commithash()),
+            COMMITHASH: JSON.stringify(gitRevisionPlugin.commithash()),
             BRANCH: JSON.stringify(gitRevisionPlugin.branch())
         }),
     ],
