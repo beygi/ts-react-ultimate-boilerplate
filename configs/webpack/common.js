@@ -31,6 +31,7 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
             moment: 'antd-jalali-moment',
+            "@ant-design/icons/lib/dist$": resolve(__dirname, "../../src/lib/icon/antIcons.ts"),
         },
     },
     context: resolve(__dirname, '../../src'),
