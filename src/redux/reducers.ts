@@ -1,4 +1,5 @@
-import { routerReducer } from "react-router-redux";
+import { connectRouter } from "connected-react-router";
+import { History } from "history";
 import { combineReducers, Reducer } from "redux";
 import appReducer from "./app/reducer";
 import { IAppStoreState , IRouterStoreState } from "./app/store";
@@ -8,7 +9,7 @@ export interface IRootState {
     router: IRouterStoreState;
 }
 
-export default combineReducers<IRootState>({
+export default (history: History) => combineReducers<IRootState>({
     app: appReducer,
-    router: routerReducer,
-});
+    router: connectRouter(history),
+  });

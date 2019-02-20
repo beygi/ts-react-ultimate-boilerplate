@@ -31,7 +31,7 @@ export default function configureStore(initialState?: IRootState): Store<IRootSt
     const createStoreWithMiddleware = applyMiddleware(logger, middleware)(create);
 
     // Create store with initial object
-    const store = createStoreWithMiddleware(connectRouter(history)(rootReducer), initialState) as Store<IRootState>;
+    const store = createStoreWithMiddleware(rootReducer(history), initialState) as Store<IRootState>;
 
     if (module.hot) {
         module.hot.accept("./reducers", () => {
