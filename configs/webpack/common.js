@@ -123,6 +123,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name]-[chunkhash].min.css",
         }),
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 	new GitRevisionPlugin({
       		lightweightTags: true
     	}),
