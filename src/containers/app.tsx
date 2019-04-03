@@ -15,6 +15,7 @@ import Config from "./../config";
 import "./app.less";
 import LandingContainer from "./Landing";
 import NotFoundContainer from "./NotFound";
+import UserContainer from "./Users";
 
 interface IProps {
 }
@@ -84,7 +85,7 @@ class AppContainer extends React.Component<IProps, IState> {
 
                     {/* Public routes */}
                     <Route exact path={`/`} render={() => <Layout private={false}><LandingContainer /></Layout>} />
-
+                    <Route path={`/random`} render={() => <Layout private={false}><UserContainer /></Layout>} />
                     {/* not Not Founded routes */}
                     <Route component={NotFoundContainer} />
                 </Switch>
