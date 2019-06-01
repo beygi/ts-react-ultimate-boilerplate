@@ -19,8 +19,9 @@ import { VERSION } from "./constants";
 
 // we need a history object to hold browsers history
 const history = createBrowserHistory();
-const user = USER.getInstance();
+
 // an unique user instance returned from an statc method in user class
+const user = USER.getInstance();
 
 console.log("version: " + VERSION);
 ReactDOM.render(
