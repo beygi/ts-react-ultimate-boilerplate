@@ -1,9 +1,9 @@
 import { connectRouter, routerMiddleware } from "connected-react-router";
-import createHistory from "history/createBrowserHistory";
+import { createBrowserHistory } from "history";
 import { applyMiddleware, createStore, Store } from "redux";
 import rootReducer, { IRootState } from "./reducers";
 
-const history = createHistory();
+const history = createBrowserHistory();
 const middleware = routerMiddleware(history);
 
 declare var window: any;
