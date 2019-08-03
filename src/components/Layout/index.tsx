@@ -2,6 +2,7 @@
  * @module Components/Layout
  */
 import * as React from "react";
+import Translate from "../Translate";
 import USER from "./../../lib/user";
 import DashboardPrivateLayout from "./containers/DashboardPrivate";
 import PublicLayout from "./containers/Public";
@@ -41,7 +42,9 @@ export default class Layout extends React.Component<IProps> {
             this.props.private ?
                 <DashboardPrivateLayout isAdmin={this.admin}>{this.props.children}</DashboardPrivateLayout>
                 :
-                <PublicLayout>{this.props.children}</PublicLayout>
+                <PublicLayout>
+                {this.props.children}
+                </PublicLayout>
         );
     }
 }

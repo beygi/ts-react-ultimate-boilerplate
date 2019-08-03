@@ -12,6 +12,13 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: src/containers/Landing/index.tsx:26
-msgid "Example"
-msgstr "نمونه"
+#: src/containers/Landing/index.tsx:41
+msgid "Random User"
+msgstr "کاربر تصادفی"
+
+#: src/containers/Landing/index.tsx:36
+msgid "TypeScript,React Boilerplate"
+msgstr ""
+
+#~ msgid "Example"
+#~ msgstr "نمونه"

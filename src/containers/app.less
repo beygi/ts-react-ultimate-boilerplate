@@ -1,7 +1,7 @@
-@import (reference) "../theme/application";
+@import (reference) "../theme/application.less";
 
 *{
-  font-family: 'b2mark' ,sans-serif;
+  font-family: 'Shabnam' ,'noto';
   font-weight: normal;
 }
 
@@ -18,4 +18,23 @@ body{
 button svg
 {
   margin-right: 5px;
+}
+
+#header-icons
+{
+  padding: 10px;
+}
+
+&[dir='ltr'] {
+  button svg
+  {
+    margin-right: 5px;
+  }
+}
+
+&[dir='rtl'] {
+  button svg
+  {
+    margin-left: 5px;
+  }
 }
