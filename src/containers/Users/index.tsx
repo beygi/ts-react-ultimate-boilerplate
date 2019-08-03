@@ -31,9 +31,12 @@ class UserContainer extends React.Component<IProps, IState> {
 
     public render() {
         if (this.state.userData === null) { return <div className="users"><Block centerTitle >Loading</Block></div>; }
-        return <div className="users"><Block title={`${this.state.userData.name.first} ${this.state.userData.name.last}`} centerTitle >
-            <img src={this.state.userData.picture.large} alt=""/>
-        </Block></div> ;
+        return (
+        <div className="users">
+            <Block title={`${this.state.userData.name.first} ${this.state.userData.name.last}`} centerTitle >
+                <img src={this.state.userData.picture.large} alt=""/>
+            </Block>
+        </div> );
     }
 }
 
