@@ -2,6 +2,7 @@
  * @module Services/i18n/Languages
  */
 
+import ar from "antd/lib/locale-provider/ar_EG";
 import en from "antd/lib/locale-provider/en_US";
 import fa from "antd/lib/locale-provider/fa_IR";
 import "moment/locale/fa";
@@ -27,6 +28,7 @@ const languages = {
         dir: "rtl",
         name: "العربية",
         locale: "ar-EG",
+        antLocale: ar,
     },
 };
 
