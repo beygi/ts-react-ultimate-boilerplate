@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "ts-react-ultimate-boilerplate",
   "version": "1.0.0",
   "main": "index.js",
   "sideEffects": true,
