@@ -154,6 +154,9 @@ module.exports = {
                 }
             }
         },
+        minimizer: [
+            new OptimizeCSSAssetsPlugin({})
+        ],
         runtimeChunk: true,
     }
 };
