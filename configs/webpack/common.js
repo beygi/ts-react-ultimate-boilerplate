@@ -140,22 +140,20 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
+            name: true,
             cacheGroups: {
-                vendor: {
-                    // async + async chunks
-                    chunks: 'all',
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendor',
+                commons: {
+                    chunks: 'initial',
+                    minChunks: 2
                 },
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    chunks: 'all',
+                    minChunks: 1,
+                    priority: -10
+                }
             }
         },
-        minimizer: [
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                sourceMap: true // set to true if you want JS source maps
-            }),
-            new OptimizeCSSAssetsPlugin({})
-        ]
+        runtimeChunk: true,
     }
 };
