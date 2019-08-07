@@ -65,7 +65,7 @@ class AppContainer extends React.Component<IProps, IState> {
         document.body.removeEventListener("changeLanguage", this.handleChangeLanguage);
     }
 
-    public handleChangeLanguage = () => {
+    public handleChangeLanguage() {
         // hande change
     }
 

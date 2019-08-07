@@ -19,11 +19,11 @@ export interface IProps {
  * basic parent layout component for public and private pages
  */
 export default class Layout extends React.Component<IProps> {
-    private admin: boolean = false;
+    private admin: boolean;
 
     constructor(props: IProps) {
         super(props);
-
+        this.admin = false;
     }
 
     public render() {
