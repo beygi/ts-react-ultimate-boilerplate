@@ -43,23 +43,8 @@ module.exports = {
             },
             {
                 test: /\.tsx?$/,
-                use: [{
-                    loader: "babel-loader",
-                    options: {
-                        plugins: ['react-hot-loader/babel', ["import", {
-                            "libraryName": "antd",
-                            "style": true, // or 'css'
-                        }]],
-                        presets: ['@babel/preset-react'],
-                    }
-                }, {
-                    loader: "awesome-typescript-loader",
-
-                    options: {
-                        errorsAsWarnings: false,
-                        useCache: true,
-                    }
-                }],
+                use: "babel-loader",
+                exclude: /node_modules/,
             },
             {
                 test: /\.(le|c)ss$/,
@@ -116,7 +101,6 @@ module.exports = {
         publicPath: "/"
     },
     plugins: [
-        new CheckerPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.html',
             favicon: 'logo.png',
