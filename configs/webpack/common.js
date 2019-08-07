@@ -2,9 +2,6 @@
 const {
     resolve
 } = require('path');
-const {
-    CheckerPlugin
-} = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
